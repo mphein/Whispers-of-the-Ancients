@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8a971ac3-a95b-436d-ae3b-13cc28cbc87b}">
+		<property name="name">
+			<value>Volume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{35aca622-fde8-4e06-ab41-4510bc658a10}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{90c94a76-0805-45ff-b126-5f91ba788630}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{90c94a76-0805-45ff-b126-5f91ba788630}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
