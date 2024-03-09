@@ -1,3 +1,4 @@
+using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public float speed = 12f;
+    const float BASE_SPEED = 8f;
+    const float SPRINT_SPEED = 12f;
+    public float speed = BASE_SPEED;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
+
+    const KeyCode SPRINT_KEY = KeyCode.LeftShift;
 
     public Transform groundCheck;
     public float groundDistance = .4f;
@@ -17,10 +22,19 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-    // Update is called once per frame
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && Input.GetKey(SPRINT_KEY) && StaminaSystem.staminaSystemInstance.CanSprint()) {
+            speed = SPRINT_SPEED;
+            StaminaSystem.staminaSystemInstance.Sprint();
+        }
+        else {
+            speed = BASE_SPEED;
+            StaminaSystem.staminaSystemInstance.RegainStamina();
+        }
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
