@@ -27,17 +27,16 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (isGrounded && Input.GetKey(SPRINT_KEY) && StaminaSystem.staminaSystemInstance.CanSprint()) {
-            speed = SPRINT_SPEED;
-            StaminaSystem.staminaSystemInstance.Sprint();
-        }
-        else {
-            speed = BASE_SPEED;
-            StaminaSystem.staminaSystemInstance.RegainStamina();
-        }
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
+        if (isGrounded) {
+            if (Input.GetKey(SPRINT_KEY) && StaminaSystem.staminaSystemInstance.CanSprint()) {
+                speed = SPRINT_SPEED;
+                StaminaSystem.staminaSystemInstance.Sprint();
+            }
+            else {
+                speed = BASE_SPEED;
+                StaminaSystem.staminaSystemInstance.RegainStamina();
+            }
+            if (velocity.y < 0) velocity.y = -2f;
         }
 
         float x = Input.GetAxis("Horizontal");
