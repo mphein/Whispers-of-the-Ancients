@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{89b82cae-1b3c-4df0-8184-1ce5dce37569}">
+		<property name="name">
+			<value>Resequence</value>
+		</property>
+		<relationship name="folder">
+			<destination>{35aca622-fde8-4e06-ab41-4510bc658a10}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{5e5c41d9-56f9-4fb6-a128-6832a2b153f7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{5e5c41d9-56f9-4fb6-a128-6832a2b153f7}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Value A</value>
+			<value>Value B</value>
+			<value>Value C</value>
+			<value>Value D</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
