@@ -1,3 +1,4 @@
+using System;
 using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     const float BASE_SPEED = 8f;
     const float SPRINT_SPEED = 12f;
     public float speed = BASE_SPEED;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3f;
+    const float gravity = -9.81f;
+    const float jumpHeight = 2f;
 
     const KeyCode SPRINT_KEY = KeyCode.LeftShift;
 
@@ -22,6 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+
+    void Start() {
+        speed = BASE_SPEED;
+    }
 
     void Update()
     {
@@ -51,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime * 1.25f;
 
         controller.Move(velocity * Time.deltaTime);
     }
