@@ -1,3 +1,5 @@
+using System;
+using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +9,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public float speed = 12f;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3f;
+    const float BASE_SPEED = 8f;
+    const float SPRINT_SPEED = 12f;
+    public float speed = BASE_SPEED;
+    const float gravity = -9.81f;
+    const float jumpHeight = 2f;
+
+    const KeyCode SPRINT_KEY = KeyCode.LeftShift;
 
     public Transform groundCheck;
     public float groundDistance = .4f;
@@ -17,13 +23,25 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-    // Update is called once per frame
+
+    void Start() {
+        speed = BASE_SPEED;
+    }
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
+
+        if (isGrounded) {
+            if (Input.GetKey(SPRINT_KEY) && StaminaSystem.staminaSystemInstance.CanSprint()) {
+                speed = SPRINT_SPEED;
+                StaminaSystem.staminaSystemInstance.Sprint();
+            }
+            else {
+                speed = BASE_SPEED;
+                StaminaSystem.staminaSystemInstance.RegainStamina();
+            }
+            if (velocity.y < 0) velocity.y = -2f;
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -38,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime * 1.25f;
 
         controller.Move(velocity * Time.deltaTime);
     }
