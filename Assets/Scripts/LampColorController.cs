@@ -1,10 +1,10 @@
 using UnityEngine;
+using System;
 
 public class LampColorController : MonoBehaviour
 {
     public Material playerInSightMaterial; // Material when player is in sight
     public Material defaultMaterial; // Default material when player is not in sight
-
     public new ParticleSystem particleSystem; // Reference to the particle system
 
     void Start()
@@ -36,5 +36,3 @@ public class LampColorController : MonoBehaviour
         }
     }
 }
-
-

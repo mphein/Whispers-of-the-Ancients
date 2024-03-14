@@ -4980,7 +4980,7 @@ Transform:
   m_GameObject: {fileID: 407114199}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0009, z: 0.0487}
+  m_LocalPosition: {x: 0.0506, y: -0.0038, z: 0.0487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5196,7 +5196,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -11580,7 +11580,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -21163,6 +21163,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1016f95bc7c52d743abeaab667211752, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1986559201}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1016f95bc7c52d743abeaab667211752, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1986559202}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1016f95bc7c52d743abeaab667211752, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1986559203}
   m_SourcePrefab: {fileID: 100100000, guid: 1016f95bc7c52d743abeaab667211752, type: 3}
 --- !u!1 &1986559195 stripped
 GameObject:
@@ -21276,6 +21282,35 @@ MonoBehaviour:
   agent: {fileID: 1986559197}
   player: {fileID: 1381124811}
   lampColorController: {fileID: 1217311309}
+--- !u!114 &1986559202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986559195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d886c02716d8f5049a8b82301acdcb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 
+  path: {fileID: 0}
+  sightDistance: 20
+  fieldOfView: 85
+  eyeHeight: 0
+--- !u!114 &1986559203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986559195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c95bd542b94ae4d9b125f0233cd8b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2115245975 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7827123723698408148, guid: cfae3ff0aafe32d4981706799f98827d, type: 3}
