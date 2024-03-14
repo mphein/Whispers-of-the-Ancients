@@ -39,6 +39,22 @@ MonoBehaviour:
     m_Key: Language Select
     m_Metadata:
       m_Items: []
+  - m_Id: 274352529764352
+    m_Key: 'GameOver '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 282002348863488
+    m_Key: Retry button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 282771651325952
+    m_Key: MainMenu Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 300180982493184
+    m_Key: FirstDeath
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

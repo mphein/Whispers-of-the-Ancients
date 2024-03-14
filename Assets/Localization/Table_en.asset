@@ -42,6 +42,24 @@ MonoBehaviour:
     m_Localized: 'Language:'
     m_Metadata:
       m_Items: []
+  - m_Id: 274352529764352
+    m_Localized: Game Over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 282002348863488
+    m_Localized: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 282771651325952
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 300180982493184
+    m_Localized: 'Achievement Unlocked:
+
+      First Death'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
