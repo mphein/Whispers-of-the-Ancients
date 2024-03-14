@@ -2,54 +2,39 @@ using UnityEngine;
 
 public class LampColorController : MonoBehaviour
 {
-    public GameObject player;
-    public Color playerFollowColor;
+    public Material playerInSightMaterial; // Material when player is in sight
+    public Material defaultMaterial; // Default material when player is not in sight
 
-    private ParticleSystem particleSystem;
-    private Color defaultColor;
+    public new ParticleSystem particleSystem; // Reference to the particle system
 
     void Start()
     {
-        particleSystem = GetComponentInChildren<ParticleSystem>();
-        defaultColor = particleSystem.main.startColor.color;
+        // Check if particleSystem is assigned
+        if (particleSystem == null)
+        {
+            Debug.LogError("Particle System is not assigned in LampColorController.");
+            return;
+        }
     }
 
-    void Update()
+    public void UpdateLampColor(bool isPlayerInSight)
     {
-        // Check if the enemy is following the player (you need to implement this logic)
-        bool isPlayerFollowing = CheckIfPlayerIsFollowed();
-
-        // Change color based on whether the player is being followed
-        if (isPlayerFollowing)
+        // Get materials from the particle system renderer
+        var renderer = particleSystem.GetComponent<Renderer>();
+        if (renderer == null)
         {
-            particleSystem.startColor = playerFollowColor;
-        }
-        else
-        {
-            particleSystem.startColor = defaultColor;
+            Debug.LogError("Renderer component not found on Particle System.");
+            return;
         }
 
-        bool IsPlayerBeingFollowed()
+        Material[] materials = renderer.materials;
+
+        // Change material colors based on whether the player is in sight
+        for (int i = 0; i < materials.Length; i++)
         {
-            // Calculate the direction from the ancient to the player
-            Vector3 directionToPlayer = player.transform.position - transform.position;
-
-            // Perform a raycast to check for obstacles between the ancient and the player
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, directionToPlayer, out hit))
-            {
-                // Check if the hit object is the player
-                if (hit.collider.gameObject == player)
-                {
-                    // Player is visible, return true
-                    return true;
-                }
-            }
-
-            // Player is not visible, return false
-            return false;
+            materials[i].color = isPlayerInSight ? playerInSightMaterial.color : defaultMaterial.color;
         }
     }
+}
 
-    
 

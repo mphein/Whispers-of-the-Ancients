@@ -1,5 +1,3 @@
-ususing System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,48 +5,42 @@ public class AncientControllerLamp : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject player;
-    public LampColorController;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (lampColorController == null)
-        {
-            Debug.LogWarning("LampColorController not assigned to AncientControllerLamp color will not change.");
-        }
-    }
+    public LampColorController lampColorController; // Reference to the lamp's color controller
 
-    // Update is called once per frame
     void Update()
     {
+        // Check if agent and player references are not null before using them
+    if (agent == null || player == null)
+    {
+        return;
+    }
+// Set destination to the player
         agent.SetDestination(player.transform.position);
-        bool isPlayerFollowing = IsPlayerBeingFollowed();
 
+        // Check if the player is in sight
+        bool isPlayerInSight = CheckIfPlayerIsInSight();
 
+        // Update lamp color based on whether the player is in sight
         if (lampColorController != null)
         {
-            lampColorController.UpdateLampColor(isPlayerFollowing);
+            lampColorController.UpdateLampColor(isPlayerInSight);
         }
+
     }
 
-    bool IsPlayerBeingFollowed()
+    bool CheckIfPlayerIsInSight()
     {
-
-        Vector3 directionToPlayer = player.transform.position - transform.position;
-
-
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, directionToPlayer, out hit))
+        if (Physics.Raycast(transform.position, player.transform.position - transform.position, out hit))
         {
-
+            // Check if the hit object is the player
             if (hit.collider.gameObject == player)
             {
-
-                return true;
+                return true; // Player is in sight
             }
         }
-
-
-        return false;
+        return false; // Player is not in sight
     }
 }
-}
+
+
