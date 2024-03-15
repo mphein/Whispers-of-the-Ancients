@@ -59,6 +59,14 @@ MonoBehaviour:
     m_Key: Win
     m_Metadata:
       m_Items: []
+  - m_Id: 449484023951360
+    m_Key: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 450230916247552
+    m_Key: Resume Button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

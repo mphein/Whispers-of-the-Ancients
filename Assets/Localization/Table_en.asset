@@ -64,6 +64,14 @@ MonoBehaviour:
     m_Localized: You Win!!!
     m_Metadata:
       m_Items: []
+  - m_Id: 449484023951360
+    m_Localized: Game Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 450230916247552
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
