@@ -53,6 +53,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu-Maddie");
     }
 }
