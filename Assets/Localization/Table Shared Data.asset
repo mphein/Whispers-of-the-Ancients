@@ -55,6 +55,10 @@ MonoBehaviour:
     m_Key: FirstDeath
     m_Metadata:
       m_Items: []
+  - m_Id: 433391179952128
+    m_Key: Win
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -20941,8 +20941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 158}
-  m_SizeDelta: {x: 376.8543, y: 82.7995}
+  m_AnchoredPosition: {x: 98.77852, y: 158}
+  m_SizeDelta: {x: 585.6953, y: 82.7995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691812311
 MonoBehaviour:
@@ -37886,8 +37886,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: 158}
-  m_SizeDelta: {x: 376.8543, y: 82.7995}
+  m_AnchoredPosition: {x: 107.13883, y: 134.52223}
+  m_SizeDelta: {x: 577.132, y: 129.7551}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062304885
 MonoBehaviour:
@@ -37905,7 +37905,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:851dd290b9c02d94faba669ac563e163
     m_TableEntryReference:
-      m_KeyId: 274352529764352
+      m_KeyId: 433391179952128
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -37949,7 +37949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You WIn!!!
+  m_text: You Win!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -59430,7 +59430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 855.01697, y: 0.35113525}
+  m_AnchoredPosition: {x: 855.01697, y: 0.35107422}
   m_SizeDelta: {x: -1710.0342, y: -757.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510364233

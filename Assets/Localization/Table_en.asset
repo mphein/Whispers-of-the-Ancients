@@ -60,6 +60,10 @@ MonoBehaviour:
       First Death'
     m_Metadata:
       m_Items: []
+  - m_Id: 433391179952128
+    m_Localized: You Win!!!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
