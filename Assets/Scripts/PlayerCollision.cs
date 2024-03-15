@@ -18,7 +18,8 @@ public class PlayerCollision : MonoBehaviour
     void GameOver()
     {
         gameover.SetActive(true);
-        Time.timeScale = 0; 
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.Confined;
     }
     void UnlockAchievement(string achievementName)
     {
